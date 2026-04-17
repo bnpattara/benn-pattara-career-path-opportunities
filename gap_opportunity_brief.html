@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gap Inc. Career Opportunity Brief | Benn Pattara</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  :root {
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --off-white: #f7f6f3;
+    --accent: #1a1a1a;
+    --mid: #555555;
+    --light: #e8e6e1;
+    --rule: #d0cdc7;
+    --tag-bg: #0a0a0a;
+    --tag-text: #ffffff;
+    --highlight: #f0ece3;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--black);
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .page {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 60px 48px 80px;
+  }
+
+  /* HEADER */
+  .header {
+    border-bottom: 2px solid var(--black);
+    padding-bottom: 28px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .header-left {}
+
+  .header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 6px;
+  }
+
+  .header-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    letter-spacing: 0.04em;
+    line-height: 1;
+  }
+
+  .header-sub {
+    font-size: 12px;
+    color: var(--mid);
+    margin-top: 6px;
+    font-weight: 300;
+  }
+
+  .header-right {
+    text-align: right;
+  }
+
+  .header-right p {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+    letter-spacing: 0.08em;
+    line-height: 1.9;
+  }
+
+  /* INTRO BLOCK */
+  .intro {
+    background: var(--off-white);
+    border-left: 3px solid var(--black);
+    padding: 20px 24px;
+    margin-bottom: 48px;
+  }
+
+  .intro p {
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--accent);
+  }
+
+  .intro strong {
+    font-weight: 600;
+  }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  /* JOB CARDS */
+  .jobs-section {
+    margin-bottom: 56px;
+  }
+
+  .job-card {
+    border: 1px solid var(--rule);
+    margin-bottom: 24px;
+    overflow: hidden;
+  }
+
+  .job-card-header {
+    background: var(--black);
+    color: var(--white);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .job-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22px;
+    letter-spacing: 0.06em;
+    line-height: 1;
+  }
+
+  .job-meta {
+    text-align: right;
+    flex-shrink: 0;
+  }
+
+  .job-req {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.08em;
+  }
+
+  .job-status {
+    display: inline-block;
+    margin-top: 5px;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    background: rgba(255,255,255,0.15);
+    color: rgba(255,255,255,0.85);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .job-status.applied {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.35);
+    color: #fff;
+  }
+
+  .job-status.new {
+    background: rgba(255,220,100,0.2);
+    border-color: rgba(255,220,100,0.5);
+    color: #ffd96a;
+  }
+
+  .job-card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-top: none;
+  }
+
+  .job-cell {
+    padding: 20px 22px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .job-cell:last-child {
+    border-right: none;
+  }
+
+  .cell-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--mid);
+    margin-bottom: 10px;
+  }
+
+  .cell-content {
+    font-size: 12.5px;
+    line-height: 1.65;
+    color: var(--accent);
+  }
+
+  .cell-content strong {
+    font-weight: 600;
+  }
+
+  .tag {
+    display: inline-block;
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: var(--black);
+    color: var(--white);
+    padding: 3px 7px;
+    margin: 3px 3px 0 0;
+  }
+
+  .tag.outline {
+    background: transparent;
+    color: var(--black);
+    border: 1px solid var(--black);
+  }
+
+  /* DM ACTIONS SECTION */
+  .dm-section {
+    margin-top: 48px;
+  }
+
+  .dm-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+    margin-top: 0;
+  }
+
+  .dm-card {
+    background: var(--white);
+    padding: 24px 22px;
+  }
+
+  .dm-card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .dm-number {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 32px;
+    color: var(--rule);
+    line-height: 1;
+  }
+
+  .dm-action-title {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .dm-action-body {
+    font-size: 12px;
+    color: var(--mid);
+    line-height: 1.65;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-left {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    color: var(--mid);
+    letter-spacing: 0.08em;
+    line-height: 1.8;
+  }
+
+  .footer-right {
+    font-family: 'DM Mono', monospace;
+    font-size: 9px;
+    color: var(--rule);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  @page { size: landscape; margin: 0.5in; }
+  @media print {
+    body { font-size: 11px; }
+    .page { padding: 32px; }
+    .job-card { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-left">
+      <div class="header-label">Career Opportunity Brief</div>
+      <div class="header-name">Benn Pattara</div>
+      <div class="header-sub">M.S. Experiential Design & Strategy, VCU Brandcenter, May 2026</div>
+    </div>
+    <div class="header-right">
+      <p>bennpattara@gmail.com</p>
+      <p>bennpattara.com</p>
+      <p>Gap #1224, Loyalty Lead</p>
+      <p>April 2026</p>
+    </div>
+  </div>
+
+  <!-- INTRO -->
+  <div class="intro">
+    <p>I am graduating in May 2026 and actively pursuing a transition into a Gap Inc. HQ role. The positions below represent my strongest points of alignment across loyalty strategy, product management, and experimentation, and where I believe my field experience, graduate research, and technical background can contribute immediately. <strong>I am sharing this to ask for your support in making the right connections internally.</strong></p>
+  </div>
+
+  <!-- JOBS TABLE -->
+  <div class="jobs-section">
+    <div class="section-label">Applied Positions</div>
+
+    <!-- JOB 1 -->
+    <div class="job-card">
+      <div class="job-card-header">
+        <div class="job-title">Associate Manager, In-Store Member Engagement</div>
+        <div class="job-meta">
+          <div class="job-req">R206466 · MKA-Loyalty · SF / NY</div>
+          <div class="job-status applied">Applied 03/16/26</div>
+        </div>
+      </div>
+      <div class="job-card-body">
+        <div class="job-cell">
+          <div class="cell-label">What This Role Does</div>
+          <div class="cell-content">Executes in-store loyalty engagement programs across the field. Builds reporting tools, analyzes program data, coordinates communications and training for store teams, and partners with HQ to optimize loyalty acquisition and retention.</div>
+        </div>
+        <div class="job-cell">
+          <div class="cell-label">Why I Am a Strong Fit</div>
+          <div class="cell-content">
+            This is the closest HQ analog to exactly what I have been doing at #1224. I scaled loyalty conversion from 1.22% to 12.07% and built Encore Madness, a live PowerBI microsite tracking district performance across 11 stores. I have operated at every layer this role touches: field execution, data reporting, and cross-store communication. My Brandcenter research focus on consumer behavior and data-driven strategy provides the analytical and systems layer the role requires.
+          </div>
+        </div>
+        <div class="job-cell">
+          <div class="cell-label">Notes</div>
+          <div class="cell-content">
+            <strong>Best fit of the group.</strong> My experience is not adjacent to this role. It is this role from the store side. The Encore Madness program directly demonstrates the reporting, coordination, and field partnership skills listed in the JD.<br><br>
+            <span class="tag">Highest Alignment</span>
+            <span class="tag outline">$93.7K–121.8K</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JOB 2 -->
+    <div class="job-card">
+      <div class="job-card-header">
+        <div class="job-title">Product Manager I, Growth</div>
+        <div class="job-meta">
+          <div class="job-req">R207793 · ITS-Product Mgmt · SF</div>
+          <div class="job-status applied">Applied 03/16/26</div>
+        </div>
+      </div>
+      <div class="job-card-body">
+        <div class="job-cell">
+          <div class="cell-label">What This Role Does</div>
+          <div class="cell-content">Foundational PM role within the Innovation & Growth Value Stream, supporting new category launches (Beauty & Accessories). Owns backlog grooming, acceptance criteria, QA coordination, and launch readiness across digital commerce capabilities.</div>
+        </div>
+        <div class="job-cell">
+          <div class="cell-label">Why I Am a Strong Fit</div>
+          <div class="cell-content">At The Branch Museum, I served as client-side product lead on a full rebrand and web ecosystem build, authoring PRDs, decomposing Epics into sprint-ready stories, managing QA, and coordinating agency delivery within an agile framework. I have also built production-grade digital tools in React, HTML, and CSS. The role reports into Randy Grey's org, with whom I have an existing relationship.</div>
+        </div>
+        <div class="job-cell">
+          <div class="cell-label">Notes</div>
+          <div class="cell-content">
+            <strong>Strong strategic fit.</strong> The Beauty & Accessories category expansion is a high-visibility initiative. Randy Grey (hiring manager) already knows my background from a prior conversation. Referencing that relationship in any internal introduction would be high-value.<br><br>
+            <span class="tag">Existing Contact</span>
+            <span class="tag outline">$117.7K–153K</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JOB 3 -->
+    <div class="job-card">
+      <div class="job-card-header">
+        <div class="job-title">Product Manager I, Product Merchandising</div>
+        <div class="job-meta">
+          <div class="job-req">R208011 · ITS-Product Mgmt · SF</div>
+          <div class="job-status applied">Applied 03/16/26</div>
+        </div>
+      </div>
+      <div class="job-card-body">
+        <div class="job-cell">
+          <div class="cell-label">What This Role Does</div>
+          <div class="cell-content">Partners with business leaders and engineers to build software powering Gap, Old Navy, Banana Republic, and Athleta. Writes requirements, prioritizes the backlog, manages stakeholder engagement, and translates technical capabilities into customer experience improvements.</div>
+        </div>
+        <div class="job-cell">
+          <div class="cell-label">Why I Am a Strong Fit</div>
+          <div class="cell-content">Same core PM craft as the Growth role: PRD authoring, backlog management, agile delivery, and cross-functional stakeholder work, but with greater brand and merchant partnership. My retail math fluency (AUR, ST%, WOS, gross margin) and frontline brand experience give me context most candidates lack. I understand what merchandising decisions look like from the customer-facing side.</div>
+        </div>
+        <div class="job-cell">
+          <div class="cell-label">Notes</div>
+          <div class="cell-content">
+            Reports into Eric Long's org (Customer Journey). Sits adjacent to the Growth role. If one advances, the other becomes an informed backup conversation. Both are in ITS-Product Management.<br><br>
+            <span class="tag outline">$117.7K–153K</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NEW ROLES -->
+  <div class="jobs-section">
+    <div class="section-label">Also Considering: Not Yet Applied</div>
+
+    <!-- JOB 4 -->
+    <div class="job-card">
+      <div class="job-card-header">
+        <div class="job-title">Associate Manager, Experimentation Pod</div>
+        <div class="job-meta">
+          <div class="job-req">R209357 · MKA-Site Operations · SF / NY</div>
+          <div class="job-status new">Posted 04/09/26</div>
+        </div>
+      </div>
+      <div class="job-card-body">
+        <div class="job-cell">
+          <div class="cell-label">What This Role Does</div>
+          <div class="cell-content">Owns end-to-end coordination and project management of site A/B tests for Gap Online, from ideation and test brief development through UX design, dev timelines, Jira ticket coordination, and post-test analysis. Partners with a Senior Manager and cross-functional digital teams.</div>
+        </div>
+        <div class="job-cell">
+          <div class="cell-label">Why I Am a Strong Fit</div>
+          <div class="cell-content">My background in A/B testing methodology, agile project coordination, and cross-functional digital delivery translates directly here. Brandcenter's curriculum is built around hypothesis-driven strategy, and my product work at The Branch Museum involved managing multi-workstream delivery under a senior stakeholder. I understand how test design, UX constraints, and business priorities intersect.</div>
+        </div>
+        <div class="job-cell">
+          <div class="cell-label">Notes</div>
+          <div class="cell-content">
+            Recently posted. Ecommerce CMS and testing tools (Optimizely) experience is listed as preferred. Worth flagging if there is an internal contact in Site Operations or Digital Marketing.<br><br>
+            <span class="tag">New</span>
+            <span class="tag outline">Pay range not posted</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- JOB 5 -->
+    <div class="job-card">
+      <div class="job-card-header">
+        <div class="job-title">Project Manager, Strategic Projects</div>
+        <div class="job-meta">
+          <div class="job-req">R210139 · FLD-Store Operations · Remote</div>
+          <div class="job-status new">Posted 04/08/26</div>
+        </div>
+      </div>
+      <div class="job-card-body">
+        <div class="job-cell">
+          <div class="cell-label">What This Role Does</div>
+          <div class="cell-content">Delivers store strategies that create competitive advantage. Leads cross-functional teams on strategic initiatives, manages project scopes, conducts quantitative and qualitative analysis, and operationalizes plans across store operations and field leadership. Includes real estate portfolio management (remodels, new openings, repositioning).</div>
+        </div>
+        <div class="job-cell">
+          <div class="cell-label">Why I Am a Strong Fit</div>
+          <div class="cell-content">The JD explicitly lists store leadership and operations experience as a primary qualifier, which is my most credible asset. Encore Madness was a strategic initiative I designed, coordinated, and operationalized across 11 stores with district leadership. My Brandcenter training adds the strategy and analytical framing the role asks for. Remote-eligible is an advantage during relocation to SF.</div>
+        </div>
+        <div class="job-cell">
+          <div class="cell-label">Notes</div>
+          <div class="cell-content">
+            This one lives in your organization's chain (FLD-Store Operations). A direct referral or mention to Leah Wright's team would carry significant weight here. This is the role where your endorsement matters most.<br><br>
+            <span class="tag">Your Org</span>
+            <span class="tag">Remote Eligible</span>
+            <span class="tag outline">Pay range not posted</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- HOW DM CAN HELP -->
+  <div class="dm-section">
+    <div class="section-label">How You Can Help</div>
+    <div class="dm-grid">
+
+      <div class="dm-card">
+        <div class="dm-card-header">
+          <div class="dm-number">01</div>
+          <div class="dm-action-title">Internal Referral or Introduction</div>
+        </div>
+        <div class="dm-action-body">A warm introduction to a hiring manager. Even a brief Slack message or email significantly increases interview conversion at Gap Inc. The most valuable introductions would be to Andrew Silaj (Loyalty), Randy Grey (Growth PM), or Leah Wright (Strategic Projects).</div>
+      </div>
+
+      <div class="dm-card">
+        <div class="dm-card-header">
+          <div class="dm-number">02</div>
+          <div class="dm-action-title">Endorsement of My Field Work</div>
+        </div>
+        <div class="dm-action-body">If contacted by a recruiter or hiring manager, sharing what you have seen firsthand, including the Encore Madness initiative, my conversion results, and my approach to running the store, would be more persuasive than anything on a resume. You have seen this work from the inside.</div>
+      </div>
+
+      <div class="dm-card">
+        <div class="dm-card-header">
+          <div class="dm-number">03</div>
+          <div class="dm-action-title">Strategic Projects Role (Your Org)</div>
+        </div>
+        <div class="dm-action-body">The Project Manager, Strategic Projects role sits within FLD-Store Operations, your chain. If there is an opportunity to flag my name or forward my materials to the right person internally before I apply, that context would give my application a meaningful edge over cold submissions.</div>
+      </div>
+
+      <div class="dm-card">
+        <div class="dm-card-header">
+          <div class="dm-number">04</div>
+          <div class="dm-action-title">Timing Guidance</div>
+        </div>
+        <div class="dm-action-body">I graduate in May. I am available to start as early as June 2026. If any of these roles, or others you know of, have a preferred start window or are accelerating hiring, knowing that would help me prioritize where to put my energy between now and graduation.</div>
+      </div>
+
+      <div class="dm-card">
+        <div class="dm-card-header">
+          <div class="dm-number">05</div>
+          <div class="dm-action-title">Honest Assessment</div>
+        </div>
+        <div class="dm-action-body">If you have visibility into which of these teams are actively filling, which roles are more competitive, or whether there are paths I have not yet identified, I would value that perspective. I want to target the right opportunity, not just the most visible one.</div>
+      </div>
+
+      <div class="dm-card">
+        <div class="dm-card-header">
+          <div class="dm-number">06</div>
+          <div class="dm-action-title">Strategy Associate, Office of the VP of Stores</div>
+        </div>
+        <div class="dm-action-body">You mentioned a potential opportunity supporting Jess directly. I want to be clear that I take that seriously. Not as a footnote, but as the role I am most excited about. A strategy associate focused on experiential, loyalty, and customer engagement would sit exactly at the intersection of everything I have been building: field operations credibility, HQ-level systems thinking, and a graduate education purpose-built for this kind of work. If there is a real conversation to be had there, I would love for you to open that door.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-left">
+      <div>Benn Pattara · bennpattara@gmail.com · 708.713.6718</div>
+      <div>Portfolio: bennpattara.com</div>
+    </div>
+    <div class="footer-right">Prepared April 2026</div>
+  </div>
+
+</div>
+</body>
+</html>
