@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#ffffff">
 <title>Gap Inc. Career Opportunity Brief | Benn Pattara</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
 
   :root {
     --black: #0a0a0a;
@@ -28,12 +34,27 @@
     color: var(--black);
     font-size: 13px;
     line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+    text-decoration-thickness: 1px;
+  }
+
+  a:active {
+    opacity: 0.85;
   }
 
   .page {
     max-width: 960px;
     margin: 0 auto;
-    padding: 60px 48px 80px;
+    padding-top: max(env(safe-area-inset-top), clamp(28px, 7vw, 60px));
+    padding-right: max(env(safe-area-inset-right), clamp(16px, 4vw, 48px));
+    padding-bottom: max(env(safe-area-inset-bottom), clamp(48px, 10vw, 80px));
+    padding-left: max(env(safe-area-inset-left), clamp(16px, 4vw, 48px));
   }
 
   /* HEADER */
@@ -59,9 +80,11 @@
 
   .header-name {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 48px;
+    font-size: clamp(2.25rem, 10vw, 3rem);
     letter-spacing: 0.04em;
     line-height: 1;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
   }
 
   .header-sub {
@@ -92,7 +115,7 @@
   }
 
   .intro p {
-    font-size: 13px;
+    font-size: clamp(13px, 3.5vw, 15px);
     line-height: 1.7;
     color: var(--accent);
   }
@@ -136,9 +159,11 @@
 
   .job-title {
     font-family: 'Bebas Neue', sans-serif;
-    font-size: 22px;
+    font-size: clamp(1.125rem, 4.5vw, 1.375rem);
     letter-spacing: 0.06em;
-    line-height: 1;
+    line-height: 1.15;
+    word-wrap: break-word;
+    overflow-wrap: anywhere;
   }
 
   .job-meta {
@@ -204,9 +229,10 @@
   }
 
   .cell-content {
-    font-size: 12.5px;
+    font-size: clamp(12px, 3.2vw, 12.5px);
     line-height: 1.65;
     color: var(--accent);
+    overflow-wrap: break-word;
   }
 
   .cell-content strong {
@@ -304,6 +330,113 @@
     text-transform: uppercase;
   }
 
+  @media (max-width: 768px) {
+    body {
+      font-size: 15px;
+    }
+
+    .header {
+      flex-direction: column;
+      align-items: stretch;
+      gap: 20px;
+      padding-bottom: 22px;
+      margin-bottom: 32px;
+    }
+
+    .header-right {
+      text-align: left;
+      padding-top: 4px;
+      border-top: 1px solid var(--rule);
+    }
+
+    .header-right p {
+      line-height: 2;
+    }
+
+    .intro {
+      padding: 18px 16px;
+      margin-bottom: 36px;
+    }
+
+    .job-card-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 16px;
+    }
+
+    .job-meta {
+      text-align: left;
+      width: 100%;
+    }
+
+    .job-req {
+      font-size: 9px;
+      line-height: 1.5;
+    }
+
+    .job-card-body {
+      grid-template-columns: 1fr;
+    }
+
+    .job-cell {
+      padding: 18px 16px;
+      border-right: none;
+    }
+
+    .job-cell:not(:last-child) {
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .job-cell:last-child {
+      border-bottom: none;
+    }
+
+    .dm-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .dm-card {
+      padding: 20px 16px;
+    }
+
+    .dm-number {
+      font-size: 28px;
+    }
+
+    .dm-action-title {
+      font-size: 11px;
+    }
+
+    .dm-action-body {
+      font-size: 13px;
+    }
+
+    .footer {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .footer-right {
+      align-self: flex-start;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .header-label,
+    .section-label,
+    .cell-label {
+      font-size: 8px;
+    }
+
+    .tag {
+      margin-top: 6px;
+      padding: 5px 8px;
+      line-height: 1.3;
+    }
+  }
+
   @page { size: landscape; margin: 0.5in; }
   @media print {
     body { font-size: 11px; }
@@ -323,8 +456,8 @@
       <div class="header-sub">M.S. Experiential Design & Strategy, VCU Brandcenter, May 2026</div>
     </div>
     <div class="header-right">
-      <p>bennpattara@gmail.com</p>
-      <p>bennpattara.com</p>
+      <p><a href="mailto:bennpattara@gmail.com">bennpattara@gmail.com</a></p>
+      <p><a href="https://bennpattara.com" target="_blank" rel="noopener noreferrer">bennpattara.com</a></p>
       <p>Gap #1224, Loyalty Lead</p>
       <p>April 2026</p>
     </div>
@@ -553,8 +686,8 @@
   <!-- FOOTER -->
   <div class="footer">
     <div class="footer-left">
-      <div>Benn Pattara · bennpattara@gmail.com · 708.713.6718</div>
-      <div>Portfolio: bennpattara.com</div>
+      <div>Benn Pattara · <a href="mailto:bennpattara@gmail.com">bennpattara@gmail.com</a> · <a href="tel:+17087136718">708.713.6718</a></div>
+      <div>Portfolio: <a href="https://bennpattara.com" target="_blank" rel="noopener noreferrer">bennpattara.com</a></div>
     </div>
     <div class="footer-right">Prepared April 2026</div>
   </div>
